@@ -4,8 +4,8 @@ common: &common
 
 development:
   <<: *common
-  adapter: postgres
-  database: <%= ENV.fetch("DATABASE_URL") %>
+  adapter: sqlite3
+  database: db/development.sqlite3
 
 test:
   <<: *common
@@ -13,6 +13,6 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgres
   <<: *common
-  database: <%= ENV.fetch("DATABASE_URL") %>
+  adapter: sqlite3
+  database: db/production.sqlite3

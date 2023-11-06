@@ -185,7 +185,6 @@ GEM
     parser (3.2.2.4)
       ast (~> 2.4.1)
       racc
-    pg (1.5.4)
     psych (5.1.1.1)
       stringio
     public_suffix (5.0.3)
@@ -264,6 +263,7 @@ GEM
       rubocop (>= 1.33.0, < 2.0)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
+    sqlite3 (1.6.8-x86_64-linux)
     stringio (3.0.8)
     thor (1.3.0)
     timeout (0.4.0)
@@ -304,7 +304,6 @@ DEPENDENCIES
   jbuilder
   letter_opener
   pagy
-  pg
   puma
   pundit
   rack-cors
@@ -312,10 +311,8 @@ DEPENDENCIES
   redis (~> 4.0)
   rubocop
   rubocop-rails
+  sqlite3
   tzinfo-data
-
-RUBY VERSION
-   ruby 3.2.1p31
 
 BUNDLED WITH
    2.4.21

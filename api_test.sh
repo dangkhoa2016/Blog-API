@@ -8,11 +8,11 @@
 #        http://localhost:3000/register && echo
 
 ## Login
-#
-# curl -H "Content-type: application/json" \
-#      -X POST \
-#      -d ' {"user":{"email":"john@gmail.com","password":"123456789"}} ' \
-#       http://localhost:3000/login && echo
+
+curl -H "Content-type: application/json" \
+     -X POST -v \
+     -d ' {"user":{"email":"john@gmail.com","password":"123456789"}} ' \
+      http://localhost:3000/users/login
 
 ## DELETE Account
 # curl  -X DELETE \
@@ -31,14 +31,16 @@
 #        http://localhost:3000/posts && echo
 
 ### Get posts
-# curl -H "Content-type: application/json" \
-#      -X GET \
-#      -d ' {"p":"1"} ' \
-#       http://localhost:3000/posts && echo
+curl -H "Content-type: application/json" \
+     -X GET \
+     -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjk5Mjg3MDcyLCJleHAiOjE3MDA0OTY2NzIsImp0aSI6Ijc0ZmJkNDBiLTJhMTktNDYwMi1hZTUzLTY0ZmEwNWM0ZGY3ZCJ9.OZ6LwpuwOBeHf-nD9JvEFC-KBQBXzOxeds67tcXhoZ4" \
+     -d ' {"p":"1"} ' \
+      http://localhost:3000/api/v1/android/posts && echo
 
 ### GET single post
-# curl -H "Content-type: application/json" \
-      # http://localhost:3000/posts/1 && echo
+curl -H "Content-type: application/json" \
+     -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjk5Mjg3MDcyLCJleHAiOjE3MDA0OTY2NzIsImp0aSI6Ijc0ZmJkNDBiLTJhMTktNDYwMi1hZTUzLTY0ZmEwNWM0ZGY3ZCJ9.OZ6LwpuwOBeHf-nD9JvEFC-KBQBXzOxeds67tcXhoZ4" \
+      http://localhost:3000/api/v1/android/posts/1/comments && echo
 
 ## Delete post
 # curl -H "Content-type: application/json" \

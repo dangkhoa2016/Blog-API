@@ -5,6 +5,7 @@
 # Table name: posts
 #
 #  id              :bigint           not null, primary key
+#  title           :string             not null
 #  content         :text             not null
 #  user_id         :bigint           not null
 #  cached_votes_up :integer          default(0), not null

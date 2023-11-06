@@ -3,13 +3,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.1'
+# ruby '3.2.1'
 
 gem 'rails', '~> 7.1.0'
 gem 'puma'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
-gem 'pg'
+gem 'sqlite3'
 gem 'rack-cors'
 gem 'devise'
 gem 'devise-jwt'

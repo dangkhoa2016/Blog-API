@@ -36,6 +36,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_04_091533) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.string "title", null: false
     t.text "content", null: false
     t.bigint "user_id", null: false
     t.integer "cached_votes_up", default: 0, null: false
