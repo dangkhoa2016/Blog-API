@@ -9,6 +9,7 @@ puts 'creating random user account ....'
   hash = { first_name: first_name, last_name: last_name, email: email }
   hash.merge!({ password: pwd })
   user = User.new(hash)
+  user.confirmed_at = Time.now.since(rand(-10000000..10000000).seconds)
   user.password_confirmation = pwd
   user.save
 end
