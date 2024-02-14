@@ -25,7 +25,6 @@ class ApplicationController < ActionController::API
 
   def raise_if_blank(resource, name)
     return if resource.present?
-
-    raise ActiveRecord::RecordNotFound, t('not_found', resource: name)
+    raise ActiveRecord::RecordNotFound, I18n.t('not_found', resource: name)
   end
 end

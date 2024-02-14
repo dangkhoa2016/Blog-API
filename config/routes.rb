@@ -14,11 +14,15 @@ Rails.application.routes.draw do
                unlocks: "users/unlocks",
              }
 
+  devise_scope :user do
+    post "users/register" => "users/registrations#create"
+  end
+
   defaults format: :json do
     namespace :api do
       namespace :v1 do
         namespace :android do
-          resources :posts, except: %i[show], shallow: true do
+          resources :posts, shallow: true do
             resources :comments, except: %i[show]
           end
         end

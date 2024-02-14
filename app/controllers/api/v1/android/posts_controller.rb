@@ -7,12 +7,17 @@ class Api::V1::Android::PostsController < ApplicationController
   include Pagy::Backend
 
   before_action :authenticate_user!
-  before_action :set_post, only: %i[update destroy]
+  before_action :set_post, only: %i[show update destroy]
 
   # GET /api/v1/android/posts
   def index
     posts = Post.includes(:user)
     @pagy, @posts = pagy(posts)
+  end
+
+  # GET /api/v1/android/posts/:id
+  def show
+    render json: @post
   end
 
   # POST /api/v1/android/posts
@@ -51,6 +56,6 @@ class Api::V1::Android::PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:title, :content)
   end
 end
